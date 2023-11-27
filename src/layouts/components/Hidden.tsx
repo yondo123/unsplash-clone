@@ -1,7 +1,5 @@
 'use client';
 
-import { InvisibleContainer } from '../styles/hiddenStyle';
+import { Invisible } from '../styles/hiddenStyle';
 
-export const Hidden = ({ children }: { children: React.ReactNode }) => (
-  <InvisibleContainer>{children}</InvisibleContainer>
-);
+export const Hidden = ({ children }: { children: React.ReactNode }) => <Invisible>{children}</Invisible>;

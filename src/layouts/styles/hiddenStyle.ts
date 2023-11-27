@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const InvisibleContainer = styled.div`
+export const Invisible = styled.div`
   visibility: hidden;
   height: 0;
   width: 0;
