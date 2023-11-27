@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { FontAlign, FontBold, FontDecoration, FontSize, FontStyle, HexColor } from '../types';
 
 const xxlFontStyle = css`
-  font-size: 24px;
+  font-size: 48px;
   line-height: 34px;
   letter-spacing: -0.01em;
   font-weight: 700;
