@@ -35,6 +35,11 @@ export default css`
  * Remove the margin in all browsers.
  */
 
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
   main {
     display: block;
   }
