@@ -27,7 +27,7 @@ const theme: Theme = {
     red: '#EC5642',
     accent: '#E1E3E6',
     disabled: '#e9ebef',
-    border: '#f2f4f6',
+    border: '#d1d1d1',
     font: '#767676',
     positive: '#3498db',
     negative: '#e74c3c'
