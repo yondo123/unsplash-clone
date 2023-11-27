@@ -1,11 +1,11 @@
 'use client';
 
-export const Heart = (props: React.SVGProps<SVGSVGElement>) => (
+export const ArrowLeft = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="24"
     height="24"
     fill="none"
-    stroke="#f2f4f6"
+    stroke="currentColor"
     strokeLinecap="butt"
     strokeLinejoin="round"
     strokeWidth="2"
@@ -13,6 +13,7 @@ export const Heart = (props: React.SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <path d="M3 12C.75 9 1.5 4.5 5.25 3s6 1.5 6.75 3c.75-1.5 3.75-4.5 7.5-3s3.75 6 1.5 9-9 9-9 9-6.75-6-9-9Z" />
+    <path d="M1.5 12h21" />
+    <path d="m7.5 4.5-6 7.5 6 7.5" />
   </svg>
 );
