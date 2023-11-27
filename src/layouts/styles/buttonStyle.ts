@@ -24,13 +24,26 @@ export const createButtonStyle = (theme: Theme, backgroundColor?: string) =>
     }
   });
 
+export const createVariantStyle = (theme: Theme, variant: 'solid' | 'ghost') => {
+  if (variant === 'ghost') {
+    return css({
+      backgroundColor: 'transparent',
+      border: 'none',
+      ':hover:not([disabled])': {
+        color: `${theme.colors.black}`,
+        borderColor: `${theme.colors.black}`
+      }
+    });
+  }
+  return css({});
+};
+
 export const createIconButtonStyle = (theme: Theme, backgroundColor?: string) => {
   const buttonStyle = createButtonStyle(theme, backgroundColor);
   return css(buttonStyle, {
     '> span': {
       float: 'right',
       marginLeft: '8px',
-      fontSize: '16px',
       lineHeight: '1px'
     },
     textAlign: 'center'

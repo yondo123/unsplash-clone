@@ -1,21 +1,33 @@
 'use client';
 
 import { useTheme } from '@emotion/react';
-import { ButtonBase, createButtonStyle, createIconButtonStyle } from '../styles/buttonStyle';
+import { ButtonBase, createButtonStyle, createIconButtonStyle, createVariantStyle } from '../styles/buttonStyle';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  variant?: 'solid' | 'ghost';
   as?: React.ElementType;
   backgroundColor?: string;
   icon?: React.ReactElement;
 }
-export const Button = ({ children, as = 'button', backgroundColor, icon, ...restProps }: ButtonProps) => {
+export const Button = ({
+  children,
+  as = 'button',
+  variant = 'solid',
+  backgroundColor,
+  icon,
+  ...restProps
+}: ButtonProps) => {
   const ButtonComponent = as;
   const defaultTheme = useTheme();
 
   if (icon) {
     return (
-      <ButtonBase css={createIconButtonStyle(defaultTheme, backgroundColor)} type="button" {...restProps}>
+      <ButtonBase
+        css={[createIconButtonStyle(defaultTheme, backgroundColor), createVariantStyle(defaultTheme, variant)]}
+        type="button"
+        {...restProps}
+      >
         {children}
         <span>{icon}</span>
       </ButtonBase>
@@ -23,7 +35,11 @@ export const Button = ({ children, as = 'button', backgroundColor, icon, ...rest
   }
 
   return (
-    <ButtonComponent css={createButtonStyle(defaultTheme, backgroundColor)} type="button" {...restProps}>
+    <ButtonComponent
+      css={[createButtonStyle(defaultTheme, backgroundColor), createVariantStyle(defaultTheme, variant)]}
+      type="button"
+      {...restProps}
+    >
       {children}
     </ButtonComponent>
   );
