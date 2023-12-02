@@ -13,6 +13,10 @@ export const InputTextWrapper = styled.div`
   ${mediaQuery.lg} {
     width: 100%;
   }
+  ${mediaQuery.sm} {
+    width: 100%;
+    font-size: 14px;
+  }
 `;
 
 export const InputTextBase = styled.input`
