@@ -30,6 +30,7 @@ export interface Urls {
   small: string;
   thumb: string;
   small_s3: string;
+  blurData: string;
 }
 
 export interface Links {

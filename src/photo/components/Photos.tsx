@@ -17,7 +17,7 @@ export const Photos = ({ photos: prefetchedPhotos }: PhotoProps) => (
         <PhotoCard key={photo.id}>
           <Image
             placeholder="blur"
-            blurDataURL={photo.urls.regular}
+            blurDataURL={photo.urls.blurData}
             src={photo.urls.regular}
             alt={photo.alt_description}
             style={{ objectFit: 'cover' }}
