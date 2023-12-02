@@ -17,7 +17,7 @@ interface ServerPageProps {
 }
 
 const Home = async ({ searchParams }: ServerPageProps) => {
-  const reqPage = searchParams?.page || '1';
+  const reqPage = searchParams?.page || 1;
   const { results, total } = await getPhotos({ page: String(reqPage) });
   const heroPhoto = await getRandomPhoto();
 
