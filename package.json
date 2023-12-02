@@ -13,9 +13,12 @@
     "@emotion/css": "^11.11.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@plaiceholder/next": "^3.0.0",
     "next": "13.5.2",
+    "plaiceholder": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sharp": "^0.32.6",
     "typescript": "5.2.2"
   },
   "devDependencies": {
