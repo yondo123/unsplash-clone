@@ -15,11 +15,11 @@ interface RequestParams {
   page?: string;
 }
 
-const getPhotos = async ({ page }: RequestParams): Promise<ResponseData> => {
+const getPhotos = async ({ page = '1' }: RequestParams): Promise<ResponseData> => {
   const queryParams = generateUrlParams({
     client_id: CLIENT_ID,
     per_page: PER_PAGE.toString(),
-    page: page ?? '1'
+    page
   });
 
   const res = await fetch(`${URL}?${queryParams}`);
