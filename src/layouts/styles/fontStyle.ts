@@ -3,34 +3,34 @@ import type { FontAlign, FontBold, FontDecoration, FontSize, FontStyle, HexColor
 
 const xxlFontStyle = css`
   font-size: 48px;
-  line-height: 34px;
+  line-height: 64px;
   letter-spacing: -0.01em;
   font-weight: 700;
 `;
 
 const xlFontStyle = css`
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 36px;
+  line-height: 48px;
   letter-spacing: -0.02em;
   font-weight: 700;
 `;
 
 const largeFontStyle = css`
-  font-size: 16px;
+  font-size: 20px;
   line-height: 24px;
   letter-spacing: -0.01em;
   font-weight: 700;
 `;
 
 const mediumFontStyle = css`
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
   letter-spacing: -0.01em;
   font-weight: 700;
 `;
 
 const smallFontStyle = css`
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.005em;
 `;
