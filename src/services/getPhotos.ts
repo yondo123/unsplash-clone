@@ -1,4 +1,4 @@
-import { getPlaiceholder } from 'plaiceholder';
+import { convertImageUrlToBase64 } from '@libraries/plaiceholder';
 import { generateUrlParams } from '@shared/utils/url';
 import { PER_PAGE, CLIENT_ID, BASE_URL } from '@shared/constants';
 import type { Photo } from '@photo/types';
@@ -14,18 +14,6 @@ interface RequestParams {
   page?: string;
 }
 
-const fetchAndCreatePlaceholder = async (photo: Photo) => {
-  const imageUrl = photo.urls.regular; // 또는 필요한 해상도의 URL
-
-  const response = await fetch(imageUrl);
-  const arrayBuffer = await response.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
-
-  const { base64 } = await getPlaiceholder(buffer);
-
-  return base64;
-};
-
 const getPhotos = async ({ page }: RequestParams): Promise<ResponseData> => {
   const queryParams = generateUrlParams({
     client_id: CLIENT_ID,
@@ -37,13 +25,13 @@ const getPhotos = async ({ page }: RequestParams): Promise<ResponseData> => {
   const errorCode = res.ok ? false : res.status;
 
   if (errorCode) {
-    throw new Error(`An error occurred while fetching the data. Status Code: ${errorCode}`);
+    throw new Error(`Status Code: ${errorCode}`);
   }
 
   const photos: Photo[] = await res.json();
   const photosWithBlurData = await Promise.all(
     photos.map(async photo => {
-      const binaryImage = await fetchAndCreatePlaceholder(photo);
+      const binaryImage = await convertImageUrlToBase64(photo.urls.regular);
       return {
         ...photo,
         urls: {
