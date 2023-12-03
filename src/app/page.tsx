@@ -1,6 +1,5 @@
 /* @jsxImportSource react */
-import Link from 'next/link';
-import { Navigation } from '@layouts/components';
+import { Navigation, NavigationItem } from '@layouts/components';
 import { PhotoHero } from '@photo/components/PhotoHero';
 import { Photos } from '@photo/components/Photos';
 import { PhotoPagination } from '@photo/components/PhotoPagination';
@@ -22,10 +21,10 @@ const Home = async ({ searchParams }: ServerPageProps) => {
   return (
     <>
       <Navigation>
-        <Link href="/">보도/편집전용</Link>
-        <Link href="/following">팔로잉</Link>
-        <Link href="/landscape">Will Photo+</Link>
-        <Link href="/color">단색</Link>
+        <NavigationItem href="/">보도/편집전용</NavigationItem>
+        <NavigationItem href="/following">팔로잉</NavigationItem>
+        <NavigationItem href="/landscape">Will Photo+</NavigationItem>
+        <NavigationItem href="/color">단색</NavigationItem>
       </Navigation>
       <PhotoHero photo={heroPhoto} />
       <Photos photos={results} />
