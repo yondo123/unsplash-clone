@@ -20,6 +20,7 @@ export const Photos = ({ photos: prefetchedPhotos }: PhotoProps) => (
             blurDataURL={photo.urls.blurData}
             src={photo.urls.regular}
             alt={photo.alt_description}
+            sizes="100%"
             style={{ objectFit: 'cover' }}
             fill
           />

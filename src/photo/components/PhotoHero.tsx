@@ -22,12 +22,13 @@ export const PhotoHero = ({ photo }: PhotoHeroProps) => {
   return (
     <PhotoHeroContainer>
       <Image
-        alt={photo?.alt_description}
         placeholder="blur"
+        alt={photo.alt_description}
         blurDataURL={photo.urls.blurData}
-        layout="fill"
-        objectFit="cover"
-        src={photo?.urls.full}
+        src={photo.urls.full}
+        sizes="100%"
+        style={{ objectFit: 'cover' }}
+        fill
       />
       <SearchInputWrapper>
         <form
