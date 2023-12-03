@@ -19,22 +19,3 @@ export const getComponentText = (children: ReactNode) => {
   }
   return childText;
 };
-
-export const extractPropValueFromComponent = (children: ReactNode, propName: string) => {
-  let propValue = '';
-  if (children) {
-    Children.forEach(children, child => {
-      if (isValidElement(child)) {
-        if (typeof child.props.children === 'string') {
-          propValue += child.props[propName];
-        } else {
-          propValue += extractPropValueFromComponent(child.props.children, propName);
-        }
-      }
-      if (typeof child === 'string') {
-        propValue += child;
-      }
-    });
-  }
-  return propValue;
-};
