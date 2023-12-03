@@ -1,6 +1,7 @@
 import { convertImageUrlToBase64 } from '@libraries/plaiceholder';
 import { generateUrlParams } from '@shared/utils/url';
 import { PER_PAGE, CLIENT_ID, BASE_URL } from '@shared/constants';
+import { getErrorMessage } from '@app/_utils/errrorMessages';
 import type { Photo } from '@photo/types';
 
 const URL = `${BASE_URL}/photos`;
@@ -22,10 +23,10 @@ const getPhotos = async ({ page }: RequestParams): Promise<ResponseData> => {
   });
 
   const res = await fetch(`${URL}?${queryParams}`);
-  const errorCode = res.ok ? false : res.status;
+  const errorMessage = getErrorMessage(res.status);
 
-  if (errorCode) {
-    throw new Error(`Status Code: ${errorCode}`);
+  if (errorMessage) {
+    throw new Error(errorMessage);
   }
 
   const photos: Photo[] = await res.json();
