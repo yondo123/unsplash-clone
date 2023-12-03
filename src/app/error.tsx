@@ -9,7 +9,7 @@ interface ErrorProps {
 }
 
 const Error = ({ error, reset }: ErrorProps) => {
-  const errorMessage = error.message ?? '알 수 없는 오류가 발생하였습니다.';
+  const errorMessage = error.message;
 
   return (
     <ErrorContainer>
